@@ -15,10 +15,10 @@ public class Student {
 	 */
 	private String name;
 
-	private String longitude;
-
 	private String latitude;
-
+	
+	private String longitude;
+	
 	private Set<Course> courses = new HashSet<Course>();
 
 	private Set<Degree> degrees = new HashSet<Degree>();
@@ -80,6 +80,14 @@ public class Student {
 
 	public void setName(String name) {
 		this.name = name;
+	}	
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
 	public String getLongitude() {
@@ -90,13 +98,6 @@ public class Student {
 		this.longitude = longitude;
 	}
 
-	public String getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
-	}
 
 	public Set<Course> getCourses() {
 		// courses = new HashSet<Course>( courses ); // Rehash hack

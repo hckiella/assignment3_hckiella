@@ -3,6 +3,8 @@ package no.uio.inf5750.assignment2.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author Torgeir Lorange Ostby
  * @version $Id: Course.java 29 2007-08-23 19:39:08Z torgeilo $
@@ -21,6 +23,7 @@ public class Course
      */
     private String name;
 
+    @JsonIgnore
     private Set<Student> attendants = new HashSet<Student>();
 
     // -------------------------------------------------------------------------

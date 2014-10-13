@@ -1,7 +1,6 @@
 package no.uio.inf5750.assignment2.service;
 
 import static org.junit.Assert.*;
-
 import no.uio.inf5750.assignment2.model.Course;
 import no.uio.inf5750.assignment2.model.Degree;
 import no.uio.inf5750.assignment2.model.Student;
@@ -440,5 +439,20 @@ public class StudentSystemTest {
 
 		assertTrue(studentSystem.studentFulfillsDegreeRequirements(studentId,
 				degreeId2));
+	}
+	
+	@Test
+	public void testSetStudentLocation() {
+		int id = studentSystem.addStudent("Freddy");
+		Student student = studentSystem.getStudent(id);
+		
+		assertTrue(student.getLatitude() == null && student.getLongitude() == null);
+		
+		student.setLongitude("0");
+		student.setLatitude("71");
+		
+		student = studentSystem.getStudent(id);
+		
+		assertTrue(student.getLongitude().equals("0") && student.getLatitude().equals("71"));
 	}
 }

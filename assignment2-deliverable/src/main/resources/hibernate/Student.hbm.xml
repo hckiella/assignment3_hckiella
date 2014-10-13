@@ -12,6 +12,9 @@
 		</id>
 
 		<property name="name" type="string" not-null="true" unique="true" />
+		
+		<property name="longitude" type="string" />
+		<property name="latitude" type="string" />
 
 		<set name="courses" table="course_attendants" inverse="true">
 			<key column="studentId" />

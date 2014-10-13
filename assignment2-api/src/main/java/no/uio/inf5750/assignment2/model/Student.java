@@ -7,110 +7,114 @@ import java.util.Set;
  * @author Torgeir Lorange Ostby
  * @version $Id: Student.java 29 2007-08-23 19:39:08Z torgeilo $
  */
-public class Student
-{
-    private int id;
+public class Student {
+	private int id;
 
-    /**
-     * Required and unique.
-     */
-    private String name;
+	/**
+	 * Required and unique.
+	 */
+	private String name;
 
-    private Set<Course> courses = new HashSet<Course>();
+	private String longitude;
 
-    private Set<Degree> degrees = new HashSet<Degree>();
+	private String latitude;
 
-    // -------------------------------------------------------------------------
-    // Constructors
-    // -------------------------------------------------------------------------
+	private Set<Course> courses = new HashSet<Course>();
 
-    public Student()
-    {
-    }
+	private Set<Degree> degrees = new HashSet<Degree>();
 
-    public Student( String name )
-    {
-        this.name = name;
-    }
+	// -------------------------------------------------------------------------
+	// Constructors
+	// -------------------------------------------------------------------------
 
-    // -------------------------------------------------------------------------
-    // Equals and hashcode
-    // -------------------------------------------------------------------------
+	public Student() {
+	}
 
-    @Override
-    public int hashCode()
-    {
-        return name.hashCode();
-    }
+	public Student(String name) {
+		this.name = name;
+	}
 
-    @Override
-    public boolean equals( Object o )
-    {
-        if ( this == o )
-        {
-            return true;
-        }
+	// -------------------------------------------------------------------------
+	// Equals and hashcode
+	// -------------------------------------------------------------------------
 
-        if ( o == null )
-        {
-            return false;
-        }
+	@Override
+	public int hashCode() {
+		return name.hashCode();
+	}
 
-        if ( !(o instanceof Student) )
-        {
-            return false;
-        }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
 
-        final Student other = (Student) o;
+		if (o == null) {
+			return false;
+		}
 
-        return name.equals( other.getName() );
-    }
+		if (!(o instanceof Student)) {
+			return false;
+		}
 
-    // -------------------------------------------------------------------------
-    // Setters and getters
-    // -------------------------------------------------------------------------
+		final Student other = (Student) o;
 
-    public int getId()
-    {
-        return id;
-    }
+		return name.equals(other.getName());
+	}
 
-    public void setId( int id )
-    {
-        this.id = id;
-    }
+	// -------------------------------------------------------------------------
+	// Setters and getters
+	// -------------------------------------------------------------------------
 
-    public String getName()
-    {
-        return name;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setName( String name )
-    {
-        this.name = name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public Set<Course> getCourses()
-    {
-        //courses = new HashSet<Course>( courses ); // Rehash hack
+	public String getName() {
+		return name;
+	}
 
-        return courses;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setCourses( Set<Course> courses )
-    {
-        this.courses = courses;
-    }
+	public String getLongitude() {
+		return longitude;
+	}
 
-    public Set<Degree> getDegrees()
-    {
-        //degrees = new HashSet<Degree>( degrees ); // Rehash hack
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 
-        return degrees;
-    }
+	public String getLatitude() {
+		return latitude;
+	}
 
-    public void setDegrees( Set<Degree> degrees )
-    {
-        this.degrees = degrees;
-    }
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public Set<Course> getCourses() {
+		// courses = new HashSet<Course>( courses ); // Rehash hack
+
+		return courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
+	public Set<Degree> getDegrees() {
+		// degrees = new HashSet<Degree>( degrees ); // Rehash hack
+
+		return degrees;
+	}
+
+	public void setDegrees(Set<Degree> degrees) {
+		this.degrees = degrees;
+	}
 }

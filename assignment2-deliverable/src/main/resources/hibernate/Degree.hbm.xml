@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+	<class name="no.uio.inf5750.assignment2.model.Degree" table="degree">
+
+		<id name="id" type="int" column="degreeId">
+		</id>
+
+		<property name="type" type="string" not-null="true" unique="true" />
+
+		<set name="requiredCourses" table="requiredCourses">
+			<key column="degreeId" />
+			<many-to-many column="courseId"
+				class="no.uio.inf5750.assignment2.model.Course" />
+			<!-- column="courseId" -->
+		</set>
+	</class>
+</hibernate-mapping>

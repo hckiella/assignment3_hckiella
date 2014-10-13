@@ -219,4 +219,13 @@ public interface StudentSystem
      * @return true/false.
      */
     boolean studentFulfillsDegreeRequirements( int studentId, int degreeId );
+    
+    /**
+     * Sets the location of a student.
+     * 
+     * @param studentId the id of the student.
+     * @param latitude the latitude of the location.
+     * @param longitude the longitude of the location.
+     */
+    void setStudentLocation(int studentId, String latitude, String longitude);
 }

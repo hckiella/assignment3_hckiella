@@ -5,7 +5,7 @@ function getStudentData() {
 	// You must first download the student json data from the server
 	// then call populateStudentTable(json);
 	// and then populateStudentLocationForm(json);
-	var json =
+	/*var json =
 			[ { "courses" : [ { "courseCode" : "FAKE5750",
 		          "id" : 1,
 		          "name" : "Fake data"
@@ -36,7 +36,8 @@ function getStudentData() {
 		    "longitude" : null,
 		    "name" : "Jane Faka"
 		  }
-		];
+		];*/
+	var json = jQuery.getJSON("api/student", json);
 	populateStudentTable(json);
 	populateStudentLocationForm(json);
 }

@@ -45,7 +45,7 @@ function getStudentData() {
 // This function gets called when you press the Set Location button
 function get_location() {
 	if (Modernizr.geolocation) {
-		// Find location... fill in. 
+		Modernizr.geolocation.getCurrentPosition(location_found, error);
 	} else {
 		// no native support; maybe try a fallback?
 	}
@@ -55,7 +55,13 @@ function get_location() {
 function location_found(position) {
 	// Extract latitude and longitude and save on the server using an AJAX call. 
 	// When you've updated the location, call populateStudentTable(json); again
-	// to put the new location next to the student on the page. . 
+	// to put the new location next to the student on the page. .
+	
+	populateStudentTable(json);
+}
+
+function location_error(error) {
+
 }
 
 

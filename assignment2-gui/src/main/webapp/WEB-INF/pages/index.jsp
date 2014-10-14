@@ -18,6 +18,21 @@
       <script src="/assignment2-gui/js/html5shiv.js"></script>
       <script src="/assignment2-gui/js/respond.min.js"></script>
     <![endif]-->
+<style>
+html, body {
+	height: 100%;
+}
+
+#map-canvas {
+	height: 50%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+}
+</style>
+
 </head>
 <body>
 
@@ -37,11 +52,11 @@
 					<li><a href="student">Students</a></li>
 					<li><a href="course">Courses</a></li>
 					<li><a href="degree">Degrees</a></li>
-					<li class="active"><a href="${pageContext.request.contextPath}/">Location</a></li>
+					<li class="active"><a
+						href="${pageContext.request.contextPath}/">Location</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="init">Init
-							database</a></li>
+					<li class="active"><a href="init">Init database</a></li>
 				</ul>
 
 
@@ -81,6 +96,8 @@
 
 	</div>
 
+	<div id="map-canvas" class="container map"></div>
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -92,10 +109,14 @@
 	<script src="js/assignment.js"></script>
 
 	<script>
-	$(document).ready(function() {
-		getStudentData();
-	});
+		$(document).ready(function() {
+			getStudentData();
+			initialize_map();
+		});
 	</script>
+
+	<script
+		src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
 </body>
 </html>

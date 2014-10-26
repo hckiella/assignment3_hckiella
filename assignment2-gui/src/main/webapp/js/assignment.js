@@ -13,8 +13,7 @@ function get_location() {
 		navigator.geolocation
 				.getCurrentPosition(location_found, location_error);
 	} else {
-		alert("Modernizr.geolocation not present");
-		// no native support; maybe try a fallback?
+		alert("Modernizr.geolocation null");
 	}
 }
 

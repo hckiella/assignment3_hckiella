@@ -23,7 +23,7 @@ public class ApiController {
 
 	@RequestMapping(value = "/api/student", method = RequestMethod.GET)
 	@ResponseBody
-	public Collection<Student> getAllStudents() { //HttpServletRequest request,	HttpServletResponse response) {
+	public Collection<Student> getAllStudents() { 
 
 		Collection<Student> students = studentSystem.getAllStudents();
 		return students;
@@ -46,7 +46,7 @@ public class ApiController {
 
 	@RequestMapping(value = "/api/course", method = RequestMethod.GET)
 	@ResponseBody
-	public Collection<Course> getAllCourses() { //HttpServletRequest request, HttpServletResponse response) {
+	public Collection<Course> getAllCourses() {
 
 		Collection<Course> courses = studentSystem.getAllCourses();
 		return courses;
@@ -55,7 +55,7 @@ public class ApiController {
 
 	@RequestMapping(value = "/api/degreet", method = RequestMethod.GET)
 	@ResponseBody
-	public Collection<Degree> getAllDegrees() { //HttpServletRequest request, HttpServletResponse response) {
+	public Collection<Degree> getAllDegrees() {
 
 		Collection<Degree> degrees = studentSystem.getAllDegrees();
 		return degrees;
